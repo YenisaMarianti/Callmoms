@@ -1,0 +1,371 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+    box-sizing: border-box;
+}
+
+/* Sidebar styling */
+.sidebar-wrapper {
+    background-color: #5B6375;
+    width: 350px;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 2;
+}
+
+.sidebar-wrapper .sidebar-header {
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+}
+
+.sidebar-wrapper .sidebar-header h3 {
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 2px;
+    user-select: none;
+}
+
+.sidebar-wrapper .sidebar-header img {
+    width: 80px;
+    height: 80px;
+}
+
+.sidebar-wrapper .sidebar-menus ul {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 25px;
+}
+
+.sidebar-header .sidebar-menus ul li {
+    position: relative;
+}
+
+.sidebar-wrapper .sidebar-menus ul li a{
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.sidebar-wrapper .sidebar-menus ul li a:hover {
+    background-color: #71a3c3;
+    transition: .2s ease-in-out;
+}
+
+.sidebar-menus ul.dropdown-menu {
+    display: none;
+}
+
+.sidebar-menus ul.dropdown-menu li {
+    padding-left: 20px;
+}
+
+/* Header Styling */
+.header-wrapper {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 150px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 40px;
+}
+
+.header-wrapper .profile-corner {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-wrapper .profile-corner p {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.header-wrapper .profile-corner .profile-pic-wrapper {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #000000;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.header-wrapper .profile-corner .profile-pic-wrapper img {
+    width: 40px;
+    height: 40px;
+}
+
+.header-wrapper .logout-wrapper {
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    position: absolute;
+    padding: 10px;
+    right: 40px;
+    top: 110px;
+    box-shadow: 1px 1px 10px rgb(133, 133, 133);
+    display: none;
+}
+
+.header-wrapper .logout-wrapper button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.header-wrapper .logout-wrapper button:hover {
+    font-weight: 600;
+}
+
+/* Content Styling */
+.content-wrapper {
+    position: absolute;
+    margin-top: 150px;
+    left: 370px;
+    right: 20px;
+}
+
+/* Title For Each Menu Styling */
+.title-each-menu {
+    font-weight: 700;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Online Consultation Styling */
+.online-consultation-wrapper .doctors-card-wrapper {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.online-consultation-wrapper .doctors-card-wrapper .doctor-card {
+    background-color: #FFFFFF;
+    box-shadow: 1px 1px 5px #e9e9e9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    gap: 10px;
+}
+
+.online-consultation-wrapper .doctors-card-wrapper .doctor-card img {
+    width: 200px;
+    height: 200px;
+}
+
+.online-consultation-wrapper .doctors-card-wrapper .doctor-card p {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.online-consultation-wrapper .doctors-card-wrapper .doctor-card a {
+    border: none;
+    cursor: pointer;
+    padding: 14px;
+    background-color: #6BA5C8;
+    border-radius: 5px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+/* Chat Styling */
+.chat-wrapper {
+    background-color: #DADADA;
+    border-radius: 5px;
+    margin-top: 20px;
+    height: 650px;
+    padding: 20px;
+}
+
+.chat-wrapper .input-message-wrapper {
+    position: fixed;
+    bottom: 15px;
+    right: 20px;
+    left: 370px;
+}
+
+.chat-wrapper .input-message-wrapper form {
+    display: flex;
+    gap: 10px;
+    
+}
+
+.chat-wrapper .message-content {
+    overflow-y: scroll;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-wrapper .input-message-wrapper form input {
+    width: 80%;
+    padding: 15px;
+    border: none;
+    box-shadow: 1px 1px 10px rgb(182, 182, 182);
+    border-radius: 5px;
+    outline: none;
+}
+
+.chat-wrapper .input-message-wrapper form button {
+    width: 20%;
+    border: none;
+    background-color: #486E86;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 16px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    box-shadow: 1px 1px 10px rgb(182, 182, 182);
+}
+
+.box-message {
+    margin: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    display: inline-block;
+    font-weight: 600;
+}
+
+/* Message from doctor to customer styling */
+.show-message-wrapper .customer-chat-wrapper {
+    background: none;
+    margin: 10px 0;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 2px solid #000000;
+}
+
+.show-message-wrapper .customer-chat-wrapper:hover {
+    background-color: #6BA5C8;
+    transition: .2s ease-in-out;
+}
+
+.show-message-wrapper .customer-chat-wrapper p {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.show-message-wrapper .customer-chat-wrapper .last-message-display {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.show-message-wrapper .customer-chat-wrapper .last-message-display img {
+    width: 30px;
+    height: 30px;
+}
+
+.show-message-wrapper .customer-chat-wrapper .last-message-display span {
+    font-size: 12px;
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 200px;
+}
+
+.show-message-wrapper .customer-chat-wrapper .last-message-display h3 {
+    font-weight: 400;
+    font-size: 12px;
+    font-style: italic;
+}
+
+.name-label {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Profile Styling */
+.profile-wrapper {
+    margin-top: 20px;
+}
+
+.profile-section {
+    background: none;
+    width: 500px;
+    height: auto;
+    border-radius: 5px;
+    border: 2px solid #000000;
+    padding: 20px;
+}
+
+.profile-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.profile-section form input {
+    padding: 15px;
+    outline: none;
+    border-radius: 8px;
+    border: 1px solid #000000;
+}
+
+.profile-section form button {
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+    background-color: #71a3c3;
+    color: #000000;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+/* Meditation Styling */
+.meditation-section {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.meditation-section .meditation-card {
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid #000000;
+    width: 300px;
+    background-color: #FFFFFF;
+}
+
+.meditation-section .meditation-card .meditation-image {
+    width: 100%;
+    height: 200px;
+}
+
+.meditation-section .meditation-card .meditation-image img {
+    width: 100%;
+    height: auto;
+}

@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #BAD7E9;
+}
+
+/* STYLING FOR LOGIN PAGE */
+
+.login-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    background-color: #FFFFFF;
+    padding: 45px 80px;
+    border-radius: 15px;
+}
+
+.login-wrapper h2 {
+    text-align: center;
+}
+
+.login-wrapper form {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.input-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.input-text-wrapper p {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.input-text-wrapper input {
+    background-color: rgba(217, 217, 217, 0.45);
+    border-radius: 18px;
+    border: none;
+    outline: none;
+    padding: 15px;
+}
+
+.input-text-wrapper input::placeholder {
+    font-weight: 600;
+    color: #00000061;
+}
+
+.input-text-wrapper label {
+    font-size: 15px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.input-text-wrapper input[type="radio"] {
+    cursor: pointer;
+    accent-color: #3C3333;
+}
+
+.login-wrapper button {
+    background-color: #434955;
+    padding: 15px 0;
+    border: none;
+    cursor: pointer;
+    border-radius: 18px;
+    font-weight: 700;
+    font-size: 18px;
+    color: #FFFFFF;
+}
+
+.account-unexist {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.account-unexist a {
+    font-weight: 700;
+    color: #000000;
+    text-decoration: none;
+}
