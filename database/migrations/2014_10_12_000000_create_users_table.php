@@ -18,6 +18,8 @@ return new class extends Migration
             $table->enum('peran', ['ibu', 'keluarga', 'dokter']);
             $table->enum('jenis_kelamin', ['perempuan', 'laki-laki']);
             $table->string('sandi');
+            $table->string('alamat')->nullable();
+            $table->string('foto')->nullable();
             $table->timestamps();
         });
     }

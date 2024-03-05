@@ -23,6 +23,8 @@ class User extends Authenticatable
         'peran',
         'jenis_kelamin',
         'sandi',
+        'alamat',
+        'foto'
     ];
 
     /**
