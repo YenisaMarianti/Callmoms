@@ -17,33 +17,41 @@ class ProfileController extends Controller
 
     public function updateProfile(Request $request, $id) {
         try {
-            if($request->no_telepon !== session('users_data')->no_telepon) {
-                $request->validate([
-                    'nama' => 'required',
-                    'no_telepon' => 'required|unique:users',
-                ]);
-            }
-            else {
-                $request->validate([
-                    'nama' => 'required',
-                    'no_telepon' => 'required',
-                ]);
-            }
-    
             $user = User::find($id);
     
-            if($request->sandi === null) {
-                $user->nama = $request->nama;
-                $user->no_telepon = $request->no_telepon;
-    
-                $user->save();
-            } else {
-                $user->nama = $request->nama;
-                $user->no_telepon = $request->no_telepon;
-                $user->sandi = Hash::make($request->sandi);
-
-                $user->save();
+            if (!$user) {
+                throw new \Exception('User not found');
             }
+    
+            $validationRules = [
+                'nama' => 'required',
+                'no_telepon' => 'required',
+                'alamat' => 'required',
+            ];
+    
+            if ($request->no_telepon !== $user->no_telepon) {
+                $validationRules['no_telepon'] .= '|unique:users';
+            }
+    
+            $request->validate($validationRules);
+    
+            $user->nama = $request->nama;
+            $user->no_telepon = $request->no_telepon;
+            $user->alamat = $request->alamat;
+    
+            if ($request->hasFile('foto')) {
+                // Handle file upload here, such as storing it in a storage directory
+                $file = $request->file('foto');
+                $fileName = time() . '_' . $file->getClientOriginalName();
+                $file->move(public_path('uploads'), $fileName);
+                $user->foto = $fileName;
+            }
+    
+            if ($request->filled('sandi')) {
+                $user->sandi = Hash::make($request->sandi);
+            }
+    
+            $user->save();
     
             return back()->with('success-update-profile', 'Berhasil Mengupdate Profile Anda');
         } catch (\Exception $e) {

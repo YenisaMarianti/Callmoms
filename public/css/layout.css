@@ -312,6 +312,10 @@
 
 .profile-section {
     background: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%);
     width: 500px;
     height: auto;
     border-radius: 5px;
@@ -341,6 +345,52 @@
     font-size: 14px;
     font-weight: 600;
     border-radius: 8px;
+}
+
+.profile-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.profile-heading img {
+    width: 80px;
+    height: 80px;
+    padding: 5px;
+    border-radius: 50px;
+    border: 2px solid #000000;
+    background-size: cover;
+}
+
+.profile-heading p {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.error-span {
+    color: red;
+    font-size: 12px;
+    font-style: italic;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-input {
+    padding: 15px;
+    outline: none;
+    border-radius: 8px;
+    border: 1px solid #000000;
+    cursor: pointer;
+}
+  
+  
+.custom-file-label {
+    margin-left: 10px;
+    font-size: 14px;
+    color: #333;
 }
 
 /* Meditation Styling */
