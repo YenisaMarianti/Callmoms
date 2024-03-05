@@ -42,7 +42,7 @@
                             <li><a href="{{ url('/meditation') }}">Meditasi</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Tes Kondisi Perasaan</a></li>
+                    <li><a href="{{ url('/emotional-condition') }}">Tes Kondisi Perasaan</a></li>
                     <li><a href="{{ url('/profile/' . session('users_data')->id) }}">Profil</a></li>
                 </ul>
             @endif
@@ -58,14 +58,18 @@
                 <p>Hi dok, {{ session('users_data')->nama }}</p>
             @endif
             <div class="profile-pic-wrapper" id="profile-pic">
-                @if ((session()->has('users_data') && session('users_data')->peran === 'ibu') || (session()->has('users_data') && session('users_data')->peran === 'keluarga' && session('users_data')->jenis_kelamin === 'perempuan'))
-                    <img src="{{ asset('images/woman.png') }}">
-                @elseif(session()->has('users_data') && session('users_data')->jenis_kelamin === 'laki-laki' && session('users_data')->peran !== 'dokter')
-                    <img src="{{ asset('images/man.png') }}">
-                @elseif(session()->has('users_data') && session('users_data')->peran === 'dokter' && session('users_data')->jenis_kelamin === 'perempuan')
-                    <img src="{{ asset('images/female-doctor.jpg') }}">
-                @elseif(session()->has('users_data') && session('users_data')->peran === 'dokter' && session('users_data')->jenis_kelamin === 'laki-laki')
-                    <img src="{{ asset('images/male-doctor.jpg') }}">
+                @if(session()->has('users_data') && !session('users_data')->foto)
+                    @if ((session()->has('users_data') && session('users_data')->peran === 'ibu') || (session()->has('users_data') && session('users_data')->peran === 'keluarga' && session('users_data')->jenis_kelamin === 'perempuan'))
+                        <img src="{{ asset('images/woman.png') }}">
+                    @elseif(session()->has('users_data') && session('users_data')->jenis_kelamin === 'laki-laki' && session('users_data')->peran !== 'dokter')
+                        <img src="{{ asset('images/man.png') }}">
+                    @elseif(session()->has('users_data') && session('users_data')->peran === 'dokter' && session('users_data')->jenis_kelamin === 'perempuan')
+                        <img src="{{ asset('images/female-doctor.jpg') }}">
+                    @elseif(session()->has('users_data') && session('users_data')->peran === 'dokter' && session('users_data')->jenis_kelamin === 'laki-laki')
+                        <img src="{{ asset('images/male-doctor.jpg') }}">
+                    @endif
+                @else
+                    <img src="{{ asset('uploads/' . session('users_data')->foto) }}" alt="User Image">
                 @endif
             </div>
             <div class="logout-wrapper" id="logout-wrapper">

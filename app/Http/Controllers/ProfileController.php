@@ -6,6 +6,8 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\File;
 
 class ProfileController extends Controller
 {
@@ -40,9 +42,14 @@ class ProfileController extends Controller
             $user->alamat = $request->alamat;
     
             if ($request->hasFile('foto')) {
-                // Handle file upload here, such as storing it in a storage directory
+                // Delete the old photo if it exists
+                if ($user->foto) {
+                    File::delete(public_path('uploads/' . $user->foto));
+                }
+    
+                // Upload the new photo
                 $file = $request->file('foto');
-                $fileName = time() . '_' . $file->getClientOriginalName();
+                $fileName = Str::random(32) . '.' . $file->getClientOriginalExtension();
                 $file->move(public_path('uploads'), $fileName);
                 $user->foto = $fileName;
             }
@@ -50,6 +57,8 @@ class ProfileController extends Controller
             if ($request->filled('sandi')) {
                 $user->sandi = Hash::make($request->sandi);
             }
+    
+            session(['users_data' => $user]);
     
             $user->save();
     

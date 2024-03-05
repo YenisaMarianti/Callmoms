@@ -6,6 +6,7 @@ use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SpecialServices\MeditationController;
 use App\Http\Controllers\SpecialServices\OnlineConsultationController;
+use App\Http\Controllers\TesKondisiPerasaanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -60,5 +61,8 @@ Route::middleware(['authentication'])->group(function () {
     // Profile
     Route::get('/profile/{id}', [ProfileController::class, 'showProfile']);
     Route::post('/profile-update/{id}', [ProfileController::class, 'updateProfile'])->name('users.update');
+
+    // Tes kondisi perasaan
+    Route::get('/emotional-condition', [TesKondisiPerasaanController::class, 'showTesKondisiPerasaan']);
 
 });

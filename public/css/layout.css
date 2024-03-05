@@ -112,6 +112,7 @@
 .header-wrapper .profile-corner .profile-pic-wrapper img {
     width: 40px;
     height: 40px;
+    border-radius: 50px;
 }
 
 .header-wrapper .logout-wrapper {
@@ -418,4 +419,76 @@ input[type="file"] {
 .meditation-section .meditation-card .meditation-image img {
     width: 100%;
     height: auto;
+}
+
+.emotional-condition-wrapper {
+    margin-top: 30px;
+}
+
+.emotional-condition-wrapper h4 {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.emotional-condition-wrapper .positive-wrapper {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 600px;
+    gap: 50px;
+}
+
+.emotional-condition-wrapper .positive-wrapper span {
+    background-color: rgba(107, 164, 200, 0.33);
+    font-size: 16px;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #598BAA;
+}
+
+.emotional-condition-wrapper .positive-wrapper span:hover {
+    background-color: #598BAA;
+    color: #FFFFFF;
+}
+
+.emotional-condition-wrapper .negative-wrapper {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 600px;
+    gap: 50px;
+}
+
+.emotional-condition-wrapper .negative-wrapper span {
+    background-color: rgba(107, 164, 200, 0.33);
+    font-size: 16px;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #598BAA;
+}
+
+.emotional-condition-wrapper .negative-wrapper span:hover {
+    background-color: #598BAA;
+    color: #FFFFFF;
+}
+
+.btn-submit-emotion {
+    margin-top: 20px;
+    padding: 50px;
+    text-align: right;
+}
+
+.btn-submit-emotion button {
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #486E86;
+    color: #FFFFFF;
+}
+
+.selected {
+    background-color: red;
 }
