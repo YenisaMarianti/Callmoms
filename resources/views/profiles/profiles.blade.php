@@ -17,10 +17,14 @@
                     @csrf
                     <div class="profile-heading">
                         @if($data->foto === null)
-                            @if(session()->has('users_data') && session('users_data')->jenis_kelamin === 'laki-laki')
-                                <img src="{{ asset('images/man.png') }}" alt="Man Image">
-                            @elseif(session()->has('users_data') && session('users_data')->jenis_kelamin === 'perempuan')
-                                <img src="{{ asset('images/perempuan.png') }}" alt="Woman Image">
+                            @if ((session()->has('users_data') && session('users_data')->peran === 'ibu') || (session()->has('users_data') && session('users_data')->peran === 'keluarga' && session('users_data')->jenis_kelamin === 'perempuan'))
+                                <img src="{{ asset('images/woman.png') }}">
+                            @elseif(session()->has('users_data') && session('users_data')->jenis_kelamin === 'laki-laki' && session('users_data')->peran !== 'dokter')
+                                <img src="{{ asset('images/man.png') }}">
+                            @elseif(session()->has('users_data') && session('users_data')->peran === 'dokter' && session('users_data')->jenis_kelamin === 'perempuan')
+                                <img src="{{ asset('images/female-doctor.jpg') }}">
+                            @elseif(session()->has('users_data') && session('users_data')->peran === 'dokter' && session('users_data')->jenis_kelamin === 'laki-laki')
+                                <img src="{{ asset('images/male-doctor.jpg') }}">
                             @endif
                         @else
                             <img src="{{ asset('uploads/' . $data->foto) }}" alt="User Image">
