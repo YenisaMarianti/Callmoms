@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <link rel="stylesheet" href="{{ asset('css/sign-in.css') }}">
     <title>Callmoms - Sign In</title>
@@ -27,7 +28,14 @@
                 <input type="password" name="sandi" placeholder="Masukkan kata sandi">
             </div>
             @error('message')
-                <div class="error">{{ $message }}</div>
+                <script>
+                    swal({
+                        title: "Gagal",
+                        text: "Username atau password yang anda masukkan salah",
+                        icon: 'warning',
+                        button: "OK",
+                    })
+                </script>
             @enderror
             <button>Masuk</button>
         </form>
