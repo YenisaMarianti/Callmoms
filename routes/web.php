@@ -20,6 +20,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Dashboard
+Route::get('/', [DashboardController::class, 'showDashboard']);
+
 Route::get('/sign-in', [LoginController::class, 'showLogin'])->name('users.login')->middleware('guest');
 Route::get('/sign-up', [RegisterController::class, 'showRegister'])->middleware('guest');
 
@@ -34,9 +37,6 @@ Route::post('/logout', [LoginController::class, 'logout']);
 
 // Middleware Authentication
 Route::middleware(['authentication'])->group(function () {
-
-    // Dashboard
-    Route::get('/dashboard', [DashboardController::class, 'showDashboard']);
 
     // Meditation
     Route::get('/meditation', [MeditationController::class, 'showMeditation'])->middleware('role:ibu,keluarga');

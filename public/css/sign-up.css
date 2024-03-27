@@ -1,98 +1,170 @@
-* {
-    margin: 0;
-    padding: 0;
-    font-family: "Inter", sans-serif;
+/* GLOBAL */
+
+:root {
+    --blue-soft: hsl(203, 52%, 82%);
+    --blue-dark: hsl(203, 32%, 51%);
+    --sidebar-bg: hsl(222, 12%, 41%);
+    --chat-bg: hsl(0, 0%, 91%);
+    --input-bg: hsl(0, 0%, 85%);
+    --send-button: hsl(203, 30%, 40%);
+    --button-bg: hsl(220, 12%, 30%);
+    --black: hsl(0, 0%, 0%);
+    --white: hsl(0, 0%, 100%);
+    --fs-20: 1.25rem;
+    --fs-18: 1.125rem;
+    --fs-16: 1rem;
+    --fs-13: 0.8125rem;
+}
+
+html {
     box-sizing: border-box;
+    font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
 }
 
 body {
-    background-color: #BAD7E9;
+    font-family: "Hind Siliguri", sans-serif;
+    background-color: var(--blue-soft);
+    margin: 0;
+    height: 105vh;
 }
 
-/* STYLING FOR REGISTER PAGE */
-
-.register-wrapper {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 700px;
-    background-color: #FFFFFF;
-    padding: 45px 80px;
-    border-radius: 15px;
+@media (min-width: 45rem) {
+    body {
+        height: 100vh;
+    }
 }
 
-.register-wrapper h2 {
-    text-align: center;
+h1, h2 {
+    margin-block-start: 0;
 }
 
-.register-wrapper form {
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
+h1, h2, label, p {
+    line-height: 1;
+    margin: 0;
 }
 
-.input-text-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.input-text-wrapper p {
-    font-weight: 600;
-    font-size: 18px;
-}
-
-.input-text-wrapper input {
-    background-color: rgba(217, 217, 217, 0.45);
-    border-radius: 18px;
-    border: none;
-    outline: none;
-    padding: 15px;
-}
-
-.input-text-wrapper input::placeholder {
-    font-weight: 600;
-    color: #00000061;
-}
-
-.input-text-wrapper label {
-    font-size: 15px;
-    font-weight: 400;
-    cursor: pointer;
-}
-
-.input-text-wrapper input[type="radio"] {
-    cursor: pointer;
-    accent-color: #3C3333;
-}
-
-.register-wrapper button {
-    background-color: #434955;
-    padding: 15px 0;
-    border: none;
-    cursor: pointer;
-    border-radius: 18px;
-    font-weight: 700;
-    font-size: 18px;
-    color: #FFFFFF;
-}
-
-.account-exist {
-    margin-top: 20px;
-    text-align: center;
-    font-size: 18px;
-}
-
-.account-exist a {
-    font-weight: 700;
-    color: #000000;
+a {
     text-decoration: none;
+}
+
+/* REGISTER STYLING */
+.wrapper-register {
+    background-color: var(--white);
+    width: 20rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: 3.125rem;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+    padding: 1.875rem 2.81rem;
+}
+
+@media (min-width: 45rem) {
+    .wrapper-register {
+        margin-top: 0;
+    }
+}
+
+.wrapper-register h1 {
+    font-size: var(--fs-20);
+    text-align: center;
+    margin: 0;
+    font-weight: 700;
+}
+
+.wrapper-register form {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.wrapper-register form label {
+    font-size: var(--fs-16);
+    font-weight: 500;
+}
+
+.wrapper-register form input {
+    border-radius: 18px;
+    border: none;
+    height: 2.6rem;
+    padding: 0 1.375rem;
+    background-color: var(--input-bg);
+    outline: none;
+}
+
+.wrapper-register form label {
+    margin-top: 0.625rem;
+}
+
+.wrapper-register form label:first-of-type {
+    margin-top: 0;
+}
+
+.wrapper-register form span {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+}
+
+.wrapper-register form span input[type="radio"] {
+    margin: 0;
+}
+
+.wrapper-register button {
+    margin-top: 0.625rem;
+    background-color: var(--button-bg);
+    font-size: var(--fs-13);
+    font-weight: 700;
+    color: var(--white);
+    height: 2.625rem;
+    border-radius: 18px;
+    border: none;
+    cursor: pointer;
+}
+
+.wrapper-register p {
+    margin-top: 1.25rem;
+    font-size: var(--fs-16);
+    font-weight: 400;
+    text-align: center;
+    color: var(--black);
 }
 
 .error-span {
     color: red;
     font-size: 12px;
     font-style: italic;
+}
+
+.login-account-link {
+    color: var(--black);
+    font-weight: 700;
+}
+
+/* 720px */
+@media (min-width: 45rem) {
+    .wrapper-register {
+        width: 43.75rem;
+        padding: 3.125rem 4rem;
+    }
+
+    .wrapper-register form {
+        margin-top: 50px;
+    }
+
+    .wrapper-register button {
+        margin-top: 1.25rem;
+    }
+
+    .wrapper-register p {
+        margin-top: 1.875rem;
+    }
 }

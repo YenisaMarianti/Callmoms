@@ -12,47 +12,46 @@
     <title>Callmoms - Sign Up</title>
 </head>
 <body>
-    <div class="register-wrapper">
-        <h2>Buat Akun Anda</h2>
+    <div class="wrapper-register">
+        <h1>Buat Akun Anda</h1>
         <form method="POST" action="{{ route('users.store') }}" >
             @csrf
-            <div class="input-text-wrapper">
-                <p>Nama</p>
-                <input type="text" name="nama" placeholder="Masukkan nama anda" required>
+            <label for="name">Nama</label>
+            <input type="text" id="name" name="nama" placeholder="Masukkan nama anda" required />
+            <label for="phoneNumber">No Telepon</label>
+            <input type="text" id="phoneNumber" name="no_telepon" inputmode="numeric"
+                placeholder="Masukkan no telepon" required />
+            <label>Peran</label>
+            <div>
+                <span><input type="radio" name="peran" id="ibu" value="ibu" checked /> <label for="ibu" style="cursor: pointer;">Ibu Pra /
+                        Pasca
+                        Melahirkan</label>
+                </span>
+                <span><input type="radio" name="peran" id="keluarga" value="keluarga" />
+                    <label for="keluarga" style="cursor: pointer;">Keluarga</label></span>
             </div>
-            <div class="input-text-wrapper">
-                <p>No Telepon</p>
-                <input type="number" name="no_telepon" placeholder="Masukkan no Telepon" required>
+            <label>Jenis Kelamin</label>
+            <div style="display: flex; align-items: center; gap: 0.625rem;">
+                <span><input type="radio" name="jenis_kelamin" id="wanita" value="perempuan" checked /> <label for="wanita"
+                        style="cursor: pointer;">Perempuan</label>
+                </span>
+                <span><input type="radio" name="jenis_kelamin" id="pria" value="laki-laki" disabled />
+                    <label for="pria" style="cursor: pointer;">Laki-laki</label></span>
             </div>
-            <div class="input-text-wrapper">
-                <p>Peran</p>
-                <div>
-                    <label><input type="radio" name="peran" value="ibu" checked> Ibu Pra/Pasca melahirkan</label>
-                </div>
-                <div>
-                    <label><input type="radio" name="peran" value="keluarga"> Keluarga / Lingkungan</label>
-                </div>
-            </div>
-            <div class="input-text-wrapper">
-                <p>Jenis Kelamin</p>
-                <div>
-                    <label><input type="radio" name="jenis_kelamin" value="perempuan" checked> Perempuan</label>
-                    <label><input type="radio" name="jenis_kelamin" value="laki-laki" disabled> Laki-laki</label>
-                </div>
-            </div>
-            <div class="input-text-wrapper">
-                <p>Sandi</p>
-                <input type="password" name="sandi" id="sandi" placeholder="Masukkan kata sandi" required>
-            </div>
-            <div class="input-text-wrapper">
-                <p>Konfirmasi Sandi</p>
-                <input type="password" name="konfirmasi_sandi" id="konfirmasi_sandi" placeholder="Masukkan ulang kata sandi" required>
-                <span id="konfirmasi_sandi_error" class="error-span"></span>
-            </div>
+            <label for="sandi">Sandi</label>
+            <input type="password" id="sandi" name="sandi" placeholder="Masukkan kata sandi" required />
+            <label for="konfirmasi_sandi">Konfirmasi Sandi</label>
+            <input type="password" name="konfirmasi_sandi" id="konfirmasi_sandi" placeholder="Masukkan ulang kata sandi" required />
+            <span id="konfirmasi_sandi_error" class="error-span"></span>
             <button type="submit">Daftar</button>
+            <p>
+                Sudah memiliki akun?
+                <a href="{{ url('/sign-in') }}" class="login-account-link">Masuk
+                    disini</a>
+            </p>
         </form>
-        <p class="account-exist">Sudah memiliki akun? <a href="{{ url('/sign-in') }}">Masuk disini</a></p>
     </div>
+
     @if(Session::has('success-registration'))
         <script>
             swal({
