@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Route;
 
 // Dashboard
 Route::get('/', [DashboardController::class, 'showDashboard']);
+Route::get('/article/{id}', [DashboardController::class, 'showArticle']);
 
 Route::get('/sign-in', [LoginController::class, 'showLogin'])->name('users.login')->middleware('guest');
 Route::get('/sign-up', [RegisterController::class, 'showRegister'])->middleware('guest');

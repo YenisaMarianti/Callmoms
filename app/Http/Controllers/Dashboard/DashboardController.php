@@ -10,4 +10,8 @@ class DashboardController extends Controller
     public function showDashboard() {
         return view('home');
     }
+
+    public function showArticle($id) {
+        return view('detail_article');
+    }
 }

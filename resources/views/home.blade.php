@@ -60,7 +60,7 @@
         <h3>Artikel</h3>
         <div class="card-article-group">
             <div class="card-article">
-                <a href="#">
+                <a href="{{ url('/article/1') }}">
                     <div class="image-article-wrapper">
                         <img src="{{ asset('images/article.png') }}" alt="Article Image">
                     </div>
@@ -70,7 +70,7 @@
                 </a>
             </div>
             <div class="card-article">
-                <a href="#">
+                <a href="{{ url('/article/2') }}">
                     <div class="image-article-wrapper">
                         <img src="{{ asset('images/article-2.png') }}" alt="Article Image">
                     </div>
@@ -80,7 +80,7 @@
                 </a>
             </div>
             <div class="card-article">
-                <a href="#">
+                <a href="{{ url('/article/3') }}">
                     <div class="image-article-wrapper">
                         <img src="{{ asset('images/article-3.png') }}" alt="Article Image">
                     </div>
@@ -90,7 +90,7 @@
                 </a>
             </div>
             <div class="card-article">
-                <a href="#">
+                <a href="{{ url('/article/4') }}">
                     <div class="image-article-wrapper">
                         <img src="{{ asset('images/article-4.png') }}" alt="Article Image">
                     </div>
@@ -150,6 +150,20 @@
                 </div>
             </div>
             
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-wrapper">
+            <div class="footer-image">
+                <img src="{{ asset('images/callmoms-logo.png') }}" alt="Callmoms logo">
+                <p>Calmoms</p>
+            </div>
+            <div class="call-us">
+                <span>Hubungi kami <a href="#">0852xxxxxxxx</a></span>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; Copyright Calmoms | Institut Teknologi Del</p>
         </div>
     </div>
 </body>
