@@ -39,6 +39,9 @@ Route::post('/logout', [LoginController::class, 'logout']);
 // Middleware Authentication
 Route::middleware(['authentication'])->group(function () {
 
+    // Dashboard User
+    Route::get('/dashboard', [DashboardController::class, 'showDashboardUser']);
+
     // Meditation
     Route::get('/meditation', [MeditationController::class, 'showMeditation'])->middleware('role:ibu,keluarga');
 

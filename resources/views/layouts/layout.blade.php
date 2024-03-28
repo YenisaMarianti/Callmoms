@@ -26,14 +26,14 @@
         <div class="sidebar-menus">
             @if(session()->has('users_data') && session('users_data')->peran === 'dokter')
                 <ul>
-                    <li><a href="#">Beranda</a></li>
+                    <li><a href="{{ url('/dashboard') }}">Beranda</a></li>
                     <li><a href="{{ url('/show-messages') }}">Konsultasi Online</a></li>
                     <li><a href="{{ url('/discussion-forum') }}">Forum Diskusi</a></li>
                     <li><a href="{{ url('/profile/' . session('users_data')->id) }}">Profil</a></li>
                 </ul>
             @elseif(session()->has('users_data') && session('users_data')->peran !== 'dokter')
                 <ul>
-                    <li><a href="#">Beranda</a></li>
+                    <li><a href="{{ url('/dashboard') }}">Beranda</a></li>
                     <li>
                         <a href="#" id="layanan-khusus-toggle">Layanan Khusus</a>
                         <ul class="dropdown-menu" id="layanan-khusus-menu">

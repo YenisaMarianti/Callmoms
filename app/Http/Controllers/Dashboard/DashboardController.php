@@ -14,4 +14,8 @@ class DashboardController extends Controller
     public function showArticle($id) {
         return view('detail_article');
     }
+
+    public function showDashboardUser() {
+        return view('special_services.dashboard');
+    }
 }
